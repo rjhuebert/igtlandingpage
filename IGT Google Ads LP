@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pittsburgh Managed IT Services | Iron Gate Technology — 1-Hour Response Guaranteed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3F;
+    --navy-light: #132D54;
+    --navy-deep: #060F1F;
+    --blue: #1E6FD9;
+    --blue-light: #2B82F0;
+    --blue-bright: #3DA0FF;
+    --blue-glow: rgba(30, 111, 217, 0.3);
+    --gold: #E8A924;
+    --gold-light: #F5C34A;
+    --gold-bright: #FFD56B;
+    --green: #22C55E;
+    --green-bg: rgba(34, 197, 94, 0.1);
+    --red-urgent: #EF4444;
+    --white: #FFFFFF;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1E293B;
+    --gray-900: #0F172A;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+    --shadow-xl: 0 25px 80px rgba(0,0,0,0.18);
+    --shadow-blue: 0 4px 30px rgba(30, 111, 217, 0.3);
+    --shadow-gold: 0 8px 35px rgba(232, 169, 36, 0.45);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--gray-800);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ANIMATIONS */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
+    50% { opacity: 0.85; box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes orbit {
+    0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+  }
+  @keyframes ping {
+    75%, 100% { transform: scale(2); opacity: 0; }
+  }
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* TOP URGENCY BAR */
+  .urgency-bar {
+    background: linear-gradient(90deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-deep) 100%);
+    background-size: 200% 100%;
+    color: var(--white);
+    text-align: center;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    animation: gradient-shift 8s ease infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  .urgency-bar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    animation: shimmer 4s ease-in-out infinite;
+  }
+  .urgency-bar .pulse {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+    vertical-align: middle;
+  }
+
+  /* HEADER */
+  .header {
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+  }
+  .logo-divider {
+    width: 1.5px;
+    height: 36px;
+    background: var(--gray-200);
+    margin: 0 4px;
+  }
+  .logo-sub {
+    font-size: 11px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.2;
+  }
+  .logo-sub svg { width: 12px; height: 12px; }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .header-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    transition: color 0.2s;
+  }
+  .header-phone svg {
+    width: 18px; height: 18px;
+    color: var(--blue);
+  }
+  .header-phone:hover { color: var(--blue); }
+  .header-cta {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+    color: var(--white);
+    padding: 13px 28px;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: var(--shadow-blue);
+    position: relative;
+    overflow: hidden;
+  }
+  .header-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.6s;
+  }
+  .header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(30, 111, 217, 0.5);
+  }
+  .header-cta:hover::before { left: 100%; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    padding: 70px 40px 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* GRID PATTERN OVERLAY */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+  /* GRADIENT BLOBS */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -30%; right: -15%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--blue-glow) 0%, transparent 60%);
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .hero-blob {
+    position: absolute;
+    bottom: -30%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(232,169,36,0.12) 0%, transparent 60%);
+    animation: float 10s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-left {
+    animation: fade-up 0.8s ease-out;
+  }
+  .hero-pittsburgh {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, rgba(232,169,36,0.15), rgba(232,169,36,0.05));
+    border: 1px solid rgba(232,169,36,0.3);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .hero-pittsburgh svg { width: 14px; height: 14px; }
+  .hero-pittsburgh .live-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: relative;
+  }
+  .hero-pittsburgh .live-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: ping 2s ease-out infinite;
+  }
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 22px;
+    letter-spacing: -1.5px;
+  }
+  .hero h1 .highlight {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 60%, var(--gold-light) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s ease infinite;
+    position: relative;
+  }
+  .hero h1 .underline {
+    position: relative;
+    white-space: nowrap;
+  }
+  .hero h1 .underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--blue-bright), transparent);
+    border-radius: 2px;
+  }
+  .hero-sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 540px;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 700; }
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    text-align: left;
+    position: relative;
+    padding-left: 18px;
+  }
+  .hero-stat::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 3px;
+    background: linear-gradient(180deg, var(--gold), transparent);
+    border-radius: 2px;
+  }
+  .hero-stat-num {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--navy);
+    padding: 17px 36px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 17px;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: var(--shadow-gold);
+    letter-spacing: -0.2px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: left 0.6s;
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 45px rgba(232, 169, 36, 0.55);
+  }
+  .btn-primary:hover::before { left: 100%; }
+  .btn-primary svg { width: 20px; height: 20px; transition: transform 0.25s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 15px 24px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover {
+    border-color: var(--white);
+    color: var(--white);
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+  }
+
+  /* HERO FORM */
+  .hero-form-wrap {
+    position: relative;
+    animation: scale-in 0.7s ease-out 0.2s both;
+  }
+  .hero-form-glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--blue), var(--gold), var(--blue));
+    background-size: 300% 300%;
+    border-radius: 22px;
+    filter: blur(20px);
+    opacity: 0.4;
+    animation: gradient-shift 6s ease infinite;
+    z-index: 0;
+  }
+  .hero-form {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(255,255,255,0.96));
+    border-radius: 20px;
+    padding: 32px 30px 28px;
+    box-shadow: var(--shadow-xl);
+    z-index: 1;
+  }
+  .form-header {
+    text-align: center;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--gray-200);
+  }
+  .form-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-bg);
+    color: var(--green);
+    border-radius: 100px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .form-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  .form-header h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .form-header p {
+    font-size: 13px;
+    color: var(--gray-500);
+  }
+  .form-group {
+    margin-bottom: 12px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray-700);
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+  }
+  .form-group label .req { color: var(--red-urgent); }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 9px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--gray-900);
+    background: var(--gray-50);
+    transition: all 0.2s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(30,111,217,0.12);
+  }
+  .form-group textarea {
+    min-height: 70px;
+    resize: vertical;
+    font-family: inherit;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .form-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--navy);
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    box-shadow: var(--shadow-gold);
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-submit::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: left 0.6s;
+  }
+  .form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 45px rgba(232, 169, 36, 0.55);
+  }
+  .form-submit:hover::before { left: 100%; }
+  .form-disclaimer {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gray-500);
+    margin-top: 12px;
+  }
+  .form-disclaimer svg {
+    width: 11px; height: 11px;
+    vertical-align: middle;
+    margin-right: 3px;
+    color: var(--green);
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 24px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .trust-bar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 200px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .trust-bar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-700);
+  }
+  .trust-item svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--blue); }
+  .trust-stars {
+    display: flex;
+    gap: 2px;
+  }
+  .trust-stars svg { width: 16px; height: 16px; color: var(--gold); }
+
+  /* CARL / BADGES SECTION */
+  .meet-section {
+    padding: 80px 40px;
+    background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .meet-section::before {
+    content: '';
+    position: absolute;
+    top: 0; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(30,111,217,0.06), transparent 70%);
+    pointer-events: none;
+  }
+  .meet-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+  .meet-photo-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    box-shadow: var(--shadow-xl);
+  }
+  .meet-photo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 1;
+  }
+  .meet-photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: var(--white);
+  }
+  .meet-photo-placeholder .initials {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 110px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+  .meet-photo-placeholder .placeholder-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .meet-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .meet-name-card {
+    position: absolute;
+    bottom: 20px; left: 20px; right: 20px;
+    background: rgba(11, 31, 63, 0.92);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 18px 22px;
+    z-index: 3;
+  }
+  .meet-name-card h3 {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.3px;
+  }
+  .meet-name-card p {
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 3px;
+    letter-spacing: 0.3px;
+  }
+  .meet-content .section-label {
+    color: var(--blue);
+  }
+  .meet-content h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.8px;
+  }
+  .meet-content > p {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .response-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .response-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: var(--white);
+    border-radius: 14px;
+    border: 1.5px solid var(--gray-200);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .response-badge::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--blue), var(--blue-light));
+    transform: scaleY(0);
+    transition: transform 0.3s;
+    transform-origin: top;
+  }
+  .response-badge:hover {
+    border-color: var(--blue);
+    transform: translateX(6px);
+    box-shadow: var(--shadow-md);
+  }
+  .response-badge:hover::before { transform: scaleY(1); }
+  .response-badge-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .response-badge-icon.clock {
+    background: linear-gradient(135deg, rgba(232, 169, 36, 0.15), rgba(232, 169, 36, 0.05));
+    color: var(--gold);
+  }
+  .response-badge-icon.truck {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));
+    color: var(--green);
+  }
+  .response-badge-icon.shield {
+    background: linear-gradient(135deg, rgba(30, 111, 217, 0.15), rgba(30, 111, 217, 0.05));
+    color: var(--blue);
+  }
+  .response-badge-icon svg { width: 24px; height: 24px; }
+  .response-badge-text h4 {
+    color: var(--gray-900);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .response-badge-text p {
+    color: var(--gray-500);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* PAIN SECTION */
+  .pain-section {
+    padding: 80px 40px;
+    background: var(--white);
+    position: relative;
+  }
+  .pain-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 14px;
+    padding: 5px 14px;
+    background: rgba(30,111,217,0.08);
+    border-radius: 100px;
+  }
+  .pain-inner h2,
+  .why-header h2,
+  .services-inner h2,
+  .process-inner h2,
+  .meet-content h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.8px;
+  }
+  .pain-inner > p {
+    font-size: 17px;
+    color: var(--gray-500);
+    max-width: 600px;
+    margin: 0 auto 48px;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+  .pain-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 26px;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-200);
+    background: var(--white);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pain-card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle at top right, rgba(239,68,68,0.06), transparent 70%);
+    pointer-events: none;
+  }
+  .pain-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30, 111, 217, 0.1);
+  }
+  .pain-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #FEF2F2, #FEE2E2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--red-urgent);
+  }
+  .pain-icon svg { width: 24px; height: 24px; }
+  .pain-card h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 5px;
+  }
+  .pain-card p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* SERVICES */
+  .services-section {
+    padding: 90px 40px;
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .services-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(30,111,217,0.04), transparent 60%);
+    pointer-events: none;
+  }
+  .services-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .services-inner > p {
+    font-size: 17px;
+    color: var(--gray-500);
+    max-width: 600px;
+    margin: 0 auto 56px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    text-align: left;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 32px 28px;
+    border: 1.5px solid var(--gray-200);
+    transition: all 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.35s;
+    transform-origin: left;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    top: -100%; right: -100%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at top right, rgba(30,111,217,0.08), transparent 50%);
+    transition: top 0.35s, right 0.35s;
+    pointer-events: none;
+  }
+  .service-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(30, 111, 217, 0.15);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover::after { top: -50%; right: -50%; }
+  .service-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(30, 111, 217, 0.1), rgba(30, 111, 217, 0.04));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    color: var(--blue);
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+  .service-card:hover .service-icon {
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: var(--white);
+    transform: scale(1.05) rotate(-5deg);
+  }
+  .service-icon svg { width: 28px; height: 28px; }
+  .service-card h3 {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .service-card p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* WHY IGT */
+  .why-section {
+    padding: 90px 40px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .why-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(232,169,36,0.05), transparent 60%);
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .why-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .why-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .why-header p {
+    font-size: 17px;
+    color: var(--gray-500);
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .why-card {
+    display: flex;
+    gap: 22px;
+    padding: 30px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--gray-50), var(--white));
+    border: 1.5px solid var(--gray-100);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30,111,217,0.04), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .why-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .why-card:hover::before { opacity: 1; }
+  .why-num {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(11,31,63,0.2);
+    position: relative;
+    z-index: 1;
+  }
+  .why-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 7px;
+    position: relative;
+    z-index: 1;
+  }
+  .why-card p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* INDUSTRIES */
+  .industries-section {
+    padding: 70px 40px;
+    background: linear-gradient(180deg, var(--white), var(--gray-50));
+  }
+  .industries-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .industries-inner h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+  }
+  .industry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .industry-tag {
+    padding: 11px 24px;
+    border-radius: 100px;
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-700);
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .industry-tag:hover {
+    border-color: var(--blue);
+    color: var(--white);
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-blue);
+  }
+
+  /* PROCESS */
+  .process-section {
+    padding: 90px 40px;
+    background: var(--gray-50);
+    position: relative;
+    overflow: hidden;
+  }
+  .process-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .process-inner > p {
+    font-size: 17px;
+    color: var(--gray-500);
+    margin-bottom: 56px;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    text-align: left;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 50px; left: 12%; right: 12%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--blue) 0 8px, transparent 8px 16px);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .process-step {
+    position: relative;
+    padding: 32px 26px;
+    background: var(--white);
+    border-radius: 18px;
+    border: 1.5px solid var(--gray-200);
+    transition: all 0.3s;
+    z-index: 1;
+  }
+  .process-step:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--blue);
+  }
+  .step-num {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-blue);
+    position: relative;
+  }
+  .step-num::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    opacity: 0.2;
+    animation: pulse 2.5s infinite;
+  }
+  .process-step h3 {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+  .process-step p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  /* GUARANTEE */
+  .guarantee-section {
+    padding: 60px 40px;
+    background: var(--white);
+  }
+  .guarantee-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    padding: 36px 40px;
+    border-radius: 20px;
+    border: 2px solid var(--green);
+    background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+    position: relative;
+    overflow: hidden;
+  }
+  .guarantee-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(34,197,94,0.15), transparent 70%);
+    pointer-events: none;
+  }
+  .guarantee-icon {
+    width: 72px; height: 72px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--green), #16A34A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(34,197,94,0.3);
+    position: relative;
+    z-index: 1;
+  }
+  .guarantee-icon svg { width: 36px; height: 36px; color: var(--white); }
+  .guarantee-text {
+    position: relative;
+    z-index: 1;
+  }
+  .guarantee-text h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: 5px;
+    letter-spacing: -0.3px;
+  }
+  .guarantee-text p {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.5;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    padding: 90px 40px;
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
+    pointer-events: none;
+  }
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: -40%; left: -10%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+    animation: float 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .cta-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .cta-inner h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.12;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+  }
+  .cta-inner h2 span {
+    background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cta-inner > p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .cta-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.65);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .cta-phone:hover { color: var(--white); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--gray-900);
+    padding: 50px 40px 30px;
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+  }
+  .footer a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer a:hover { color: var(--white); }
+  .footer-logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .footer-logo span { color: var(--blue-bright); }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+
+  /* MOBILE FLOATING CTA */
+  .floating-cta {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    padding: 12px 16px;
+    z-index: 200;
+    box-shadow: 0 -4px 25px rgba(0,0,0,0.12);
+    gap: 10px;
+  }
+  .floating-cta a {
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .floating-cta .call-btn {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  .floating-cta .form-btn {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .hero-inner,
+    .meet-inner { grid-template-columns: 1fr; gap: 40px; }
+    .meet-photo-card { max-width: 360px; margin: 0 auto; }
+    .hero h1 { font-size: 40px; }
+    .hero { padding: 50px 24px 70px; }
+    .pain-inner h2,
+    .why-header h2,
+    .services-inner h2,
+    .process-inner h2,
+    .meet-content h2 { font-size: 32px; }
+    .cta-inner h2 { font-size: 34px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .pain-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .header { padding: 12px 18px; }
+    .header-phone { display: none; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-steps::before { display: none; }
+  }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 32px; }
+    .hero-stats { gap: 18px; }
+    .hero-stat-num { font-size: 26px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .trust-bar-inner { flex-direction: column; gap: 14px; }
+    .header-cta { padding: 10px 16px; font-size: 13px; }
+    .cta-inner h2 { font-size: 28px; }
+    .guarantee-inner { flex-direction: column; text-align: center; padding: 28px; }
+    .floating-cta { display: flex; }
+    body { padding-bottom: 78px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="pulse"></span>
+  Pittsburgh Managed IT Services &mdash; 1-Hour Response Guaranteed &bull; Same-Day Onsite Visits Available
+</div>
+
+<!-- STICKY HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img src="images/irongate-logo.jpg" alt="Iron Gate Technology" class="logo-img">
+    <div class="logo-divider"></div>
+    <div class="logo-sub">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+      Pittsburgh<br>Managed IT
+    </div>
+  </div>
+  <div class="header-right">
+    <a href="tel:4122656311" class="header-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (412) 265-6311
+    </a>
+    <a href="#contact-form" class="header-cta">Free Managed IT Assessment</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-pittsburgh">
+        <span class="live-dot"></span>
+        Pittsburgh Managed IT Services Since 2012
+      </div>
+      <h1>Pittsburgh Managed IT Services <span class="highlight">Solved in 1 Hour</span>, Not 1 Day.</h1>
+      <p class="hero-sub">Pittsburgh businesses with <strong>10&ndash;100 employees</strong> trust Iron Gate Technology to manage their entire IT environment &mdash; with senior engineers who answer when you call and resolve issues the same day.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="60" data-suffix="min">&lt; 1hr</div>
+          <div class="hero-stat-label">Response SLA</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="20" data-suffix="+">20+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="100" data-suffix="%">100%</div>
+          <div class="hero-stat-label">5-Star Reviews</div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#contact-form" class="btn-primary">
+          Contact Us Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="tel:4122656311" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (412) 265-6311
+        </a>
+      </div>
+    </div>
+
+    <!-- HERO FORM -->
+    <div class="hero-form-wrap" id="contact-form">
+      <div class="hero-form-glow"></div>
+      <form class="hero-form" onsubmit="event.preventDefault(); document.getElementById('form-success').style.display='block'; this.style.display='none';">
+        <div class="form-header">
+          <div class="form-badge"><span class="dot"></span>Free Managed IT Assessment</div>
+          <h3>Get Managed IT Help Within 1 Hour</h3>
+          <p>Tell us about your IT environment &mdash; we'll respond same-day.</p>
+        </div>
+
+        <div class="form-group">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" name="name" required placeholder="John Smith">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone <span class="req">*</span></label>
+            <input type="tel" name="phone" required placeholder="(412) 555-0100">
+          </div>
+          <div class="form-group">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="email" required placeholder="john@company.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Business Name <span class="req">*</span></label>
+          <input type="text" name="business" required placeholder="Acme Manufacturing Co.">
+        </div>
+
+        <div class="form-group">
+          <label>What are your top IT issues? <span class="req">*</span></label>
+          <textarea name="issues" required placeholder="e.g. slow help desk response, frequent downtime, no proactive monitoring, looking to switch IT providers..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          Get My Free Assessment
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+
+        <div class="form-disclaimer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          100% confidential. No spam. Response within 1 business hour.
+        </div>
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div id="form-success" style="display:none; position:relative; background:white; border-radius:20px; padding:50px 30px; box-shadow:var(--shadow-xl); text-align:center;">
+        <div style="width:72px; height:72px; border-radius:50%; background:var(--green); margin:0 auto 18px; display:flex; align-items:center; justify-content:center;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:24px; font-weight:800; color:var(--gray-900); margin-bottom:10px;">Got it! We'll be in touch.</h3>
+        <p style="color:var(--gray-500); font-size:15px;">A senior engineer will call you within the next business hour.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-stars">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      100% Five-Star Reviews
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      BBB A+ Rated
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Microsoft Partner
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+      Locally Owned Since 2012
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      24/7 Monitoring
+    </div>
+  </div>
+</div>
+
+<!-- MEET CARL + BADGES -->
+<section class="meet-section">
+  <div class="meet-inner">
+    <div class="reveal">
+      <div class="meet-photo-card">
+        <img src="images/carl.jpeg" alt="Carl Kunzmann, Founder & CEO of Iron Gate Technology">
+        <div class="meet-name-card">
+          <h3>Carl Kunzmann</h3>
+          <p>Founder & CEO &bull; 20+ Years in IT</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="meet-content reveal">
+      <div class="section-label">Why Speed Matters</div>
+      <h2>Your Managed IT Provider Should Move at the Speed of Your Business.</h2>
+      <p>Unlike national managed IT firms with offshore call centers, we're a Pittsburgh-based team of senior engineers managing your entire IT environment. We pick up the phone. We know your network inside and out. And if you need us onsite, we're at your door &mdash; today.</p>
+
+      <div class="response-badges">
+        <div class="response-badge">
+          <div class="response-badge-icon clock">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="response-badge-text">
+            <h4>1-Hour Response SLA</h4>
+            <p>We pick up when you call &mdash; every time, guaranteed.</p>
+          </div>
+        </div>
+        <div class="response-badge">
+          <div class="response-badge-icon truck">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="response-badge-text">
+            <h4>Same-Day Onsite Visits</h4>
+            <p>Critical issues? A senior engineer will be at your door today.</p>
+          </div>
+        </div>
+        <div class="response-badge">
+          <div class="response-badge-icon shield">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="response-badge-text">
+            <h4>Senior Engineers Only</h4>
+            <p>No offshore help desks. No junior techs. Real Pittsburgh experts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section">
+  <div class="pain-inner reveal">
+    <div class="section-label">Sound Familiar?</div>
+    <h2>Your Current Managed IT Provider Is Costing You<br>More Than You Think.</h2>
+    <p>Most Pittsburgh businesses don't fire their managed IT company because of one disaster. They fire them because of a thousand small frustrations &mdash; the kind that pile up when nobody's actually managing your IT.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h3>Slow Help Desk Response</h3>
+          <p>You submit a ticket and wait hours &mdash; sometimes days &mdash; for someone to even acknowledge it. Your team can't work.</p>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h3>Offshore Help Desks &amp; Junior Techs</h3>
+          <p>You explain your problem to someone who's never seen your network. They read scripts. They guess. Nothing gets resolved.</p>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <h3>Reactive, Not Proactive</h3>
+          <p>Your provider only shows up when something breaks. No monitoring. No maintenance. No prevention. Just firefighting.</p>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div>
+          <h3>Unpredictable Monthly Bills</h3>
+          <p>Hidden fees, hourly billing surprises, and no clear accounting of what your managed IT contract actually covers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="services-inner reveal">
+    <div class="section-label">What's Included</div>
+    <h2>Everything Your Business Needs in One Managed IT Plan</h2>
+    <p>One flat monthly rate. One Pittsburgh team. Every piece of IT your business runs on &mdash; managed, monitored, and maintained.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+        </div>
+        <h3>24/7 Proactive Monitoring</h3>
+        <p>Your servers, network, and endpoints monitored around the clock. Issues caught and fixed before your team ever notices.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>Unlimited Help Desk Support</h3>
+        <p>Pittsburgh-based senior engineers, not offshore call centers. Unlimited tickets, unlimited calls, all included.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        </div>
+        <h3>Patch Management &amp; Updates</h3>
+        <p>Operating systems, applications, and security patches deployed automatically. No outdated software, no security gaps.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Endpoint Security &amp; Antivirus</h3>
+        <p>Every laptop, desktop, and server protected with enterprise-grade security. Ransomware, phishing, and malware blocked at the device.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3>Backup &amp; Disaster Recovery</h3>
+        <p>Automated daily backups of every critical system. If disaster hits, you're back online in hours &mdash; not days.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Strategic IT Planning</h3>
+        <p>Quarterly business reviews, IT budgeting, and roadmap planning. Your managed IT plan grows with your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IGT -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <div class="section-label">The IGT Difference</div>
+      <h2>Why Pittsburgh Businesses Choose Iron Gate for Managed IT</h2>
+      <p>We built this company on one simple idea: managed IT services should actually manage your IT.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="why-num">1</div>
+        <div>
+          <h3>1-Hour Response &mdash; Guaranteed</h3>
+          <p>When something breaks, you can't wait until tomorrow. We respond within 60 minutes and can have an engineer onsite the same day.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">2</div>
+        <div>
+          <h3>Senior Engineers, Not Junior Techs</h3>
+          <p>Every engineer managing your IT is a seasoned professional. You'll never get passed to an offshore call center or entry-level tech.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">3</div>
+        <div>
+          <h3>Predictable, Flat-Rate Pricing</h3>
+          <p>No surprise invoices. Per-user or per-device pricing so you know exactly what your managed IT costs every month.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">4</div>
+        <div>
+          <h3>Proactive, Not Reactive</h3>
+          <p>We monitor and maintain your environment 24/7 and fix issues before they become outages. The best IT problem is the one you never knew about.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries-section">
+  <div class="industries-inner reveal">
+    <h2>Managed IT for Pittsburgh Businesses Like Yours</h2>
+    <div class="industry-tags">
+      <div class="industry-tag">Construction</div>
+      <div class="industry-tag">Manufacturing</div>
+      <div class="industry-tag">Healthcare</div>
+      <div class="industry-tag">Financial Services</div>
+      <div class="industry-tag">Law Firms</div>
+      <div class="industry-tag">Nonprofits</div>
+      <div class="industry-tag">Distribution</div>
+      <div class="industry-tag">Professional Services</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="process-inner reveal">
+    <div class="section-label">Getting Started</div>
+    <h2>Three Steps to Hassle-Free Managed IT</h2>
+    <p>No long contracts to read. No commitment to start. Just a conversation.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Free Managed IT Assessment</h3>
+        <p>We sit down (in person or virtual), learn your business, and audit your current IT environment. No cost, no pressure.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>Custom Managed IT Plan</h3>
+        <p>We design a managed IT plan tailored to your size, industry, and growth goals. Flat-rate pricing, no hidden fees.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Enjoy Reliable IT</h3>
+        <p>Faster support, stronger security, lower costs. Your team focuses on work &mdash; we manage the technology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee-section">
+  <div class="guarantee-inner reveal">
+    <div class="guarantee-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="guarantee-text">
+      <h3>90-Day Satisfaction Guarantee</h3>
+      <p>If you're not 100% satisfied within the first three months, we'll help you transition to a new vendor at no charge. That's how confident we are you'll want to stay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2>Ready for Managed IT That Actually <span>Works?</span></h2>
+    <p>Get a free managed IT assessment and see what Iron Gate Technology can do for your Pittsburgh business.</p>
+    <div class="cta-buttons">
+      <a href="#contact-form" class="btn-primary">
+        Contact Us Now
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="tel:4122656311" class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (412) 265-6311
+      </a>
+    </div>
+    <a href="tel:4122656311" class="cta-phone">Or call directly: (412) 265-6311</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Iron Gate <span>Technology</span></div>
+  <div class="footer-links">
+    <a href="tel:4122656311">(412) 265-6311</a>
+    <a href="mailto:ckunzmann@trustigt.com">ckunzmann@trustigt.com</a>
+    <a href="#">Pittsburgh, PA</a>
+  </div>
+  <p>&copy; 2026 Iron Gate Technology, Inc. &bull; Managed IT Services &bull; Pittsburgh, PA</p>
+</footer>
+
+<!-- MOBILE FLOATING CTA -->
+<div class="floating-cta">
+  <a href="tel:4122656311" class="call-btn">Call Now</a>
+  <a href="#contact-form" class="form-btn">Get Quote</a>
+</div>
+
+<script>
+  // SCROLL REVEAL ANIMATION
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
